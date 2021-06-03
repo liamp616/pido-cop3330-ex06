@@ -33,29 +33,29 @@ public class App {
     public static void main(String[] args) {
         App myApp = new App();
 
-        String ageInput = myApp.readAgeInput();
-        int age = Integer.parseInt(ageInput);
+        int ageInput = myApp.readAgeInput();
 
-        String likeToRetire = myApp.readLTR();
-        int LTR = Integer.parseInt(likeToRetire);
+        int likeToRetire = myApp.readLTR();
 
-        myApp.retire(age, LTR);
+        myApp.retire(ageInput, likeToRetire);
     }
 
-    public void retire(int age, int LTR) {
-        System.out.println("You have " + (LTR - age) + " years left until you can retire.");
-        System.out.println("It's 2015, so you can retire in " + (2015+(LTR - age)));
+    public void retire(int ageInput, int likeToRetire) {
+        System.out.println("You have " + (likeToRetire - ageInput) + " years left until you can retire.");
+        System.out.println("It's 2015, so you can retire in " + (2015+(likeToRetire - ageInput)));
     }
 
-    public String readLTR() {
+    public int readLTR() {
         System.out.print("At what age would you like to retire? ");
         String LTR = in.nextLine();
-        return LTR;
+        int likeToRetire = Integer.parseInt(LTR);
+        return likeToRetire;
     }
 
-    public String readAgeInput() {
+    public int readAgeInput() {
         System.out.print("What is your current age? ");
         String ageInput = in.nextLine();
-        return ageInput;
+        int age = Integer.parseInt(ageInput);
+        return age;
     }
 }
