@@ -5,6 +5,7 @@
 
 package base;
 
+import java.util.Calendar;
 import java.util.Scanner;
 
 /*
@@ -46,8 +47,9 @@ public class App {
     }
 
     public void retire(int ageInput, int likeToRetire) {
+        int year = Calendar.getInstance().get(Calendar.YEAR);
         System.out.println("You have " + (likeToRetire - ageInput) + " years left until you can retire.");
-        System.out.println("It's 2015, so you can retire in " + (2015+(likeToRetire - ageInput)));
+        System.out.println("It's " + year + ", so you can retire in " + (year+(likeToRetire - ageInput)));
     }
 
     public int readLTR() {
